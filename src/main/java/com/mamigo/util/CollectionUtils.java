@@ -191,15 +191,15 @@ public class CollectionUtils {
 	{
 		return join(seprator,asList(arr));
 	}
-	public static <V> String join(String seprator,Collection<V> coll)
+	public static <V> String join(String seprator,Iterable<V> coll)
 	{
 		return join("",seprator,coll);
 	}
-	public static <V> String join(String prefix, String seprator,Collection<V> coll)
+	public static <V> String join(String prefix, String seprator,Iterable<V> coll)
 	{
 		return join(prefix,false,seprator,coll);
 	}
-	public static <V> String join(String prefix,boolean bQuote ,String seprator,Collection<V> coll)
+	public static <V> String join(String prefix,boolean bQuote ,String seprator,Iterable<V> coll)
 	{
 		StringBuffer sb= new StringBuffer(prefix);
 		for (Iterator<V> iterator = coll.iterator(); iterator.hasNext();) {

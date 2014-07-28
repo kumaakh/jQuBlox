@@ -22,5 +22,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/quickblox-android-1.2.3.jar" sourcepath="C:/Users/Developer/Downloads/quickblox-android-sdk-master"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

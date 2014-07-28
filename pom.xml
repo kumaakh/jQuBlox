@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mamigo.jQuBlox</groupId>
   <artifactId>com.mamigo.jQuBlox</artifactId>
-  <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>jQuBlox</name>
   <description>java wrapper for QuickBlox</description>
@@ -148,6 +147,11 @@
   		<groupId>us.monoid.web</groupId>
   		<artifactId>resty</artifactId>
   		<version>0.3.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.json</groupId>
+  		<artifactId>json</artifactId>
+  		<version>20090211</version>
   	</dependency>
   </dependencies>
   <reporting>
