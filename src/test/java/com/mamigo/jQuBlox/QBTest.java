@@ -87,7 +87,7 @@ public class QBTest {
 			QBCustomObjectRequestBuilder builder = new QBCustomObjectRequestBuilder();
 			builder.eq("model", "T");
 			allObjects = q.getObjects(className,builder);
-			assertThat(allObjects.size(),is(equalTo(6)));
+			assertThat(allObjects.size(),is(greaterThan(6)));
 		}
 	}
 	@Test
