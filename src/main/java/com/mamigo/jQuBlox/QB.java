@@ -35,6 +35,7 @@ import com.quickblox.core.result.Result;
 import com.quickblox.internal.core.helper.StringifyArrayList;
 import com.quickblox.internal.module.content.deserializer.QBFileStatusDeserializer;
 import com.quickblox.internal.module.custom.request.QBCustomObjectRequestBuilder;
+import com.quickblox.internal.module.custom.request.QBCustomObjectUpdateBuilder;
 import com.quickblox.module.auth.QBAuth;
 import com.quickblox.module.auth.model.QBSession;
 import com.quickblox.module.auth.model.QBSessionWrap;
@@ -278,6 +279,18 @@ public class QB {
 	{
 		CustomObjectCB cb =new CustomObjectCB();
 		QBCustomObjects.updateObject(customObject, cb);
+		if(cb.obj==null) return false;
+		cb.obj.copyFieldsTo(customObject);
+		return true;
+	}
+	
+	public boolean incrementFieldBy(QBCustomObject customObject, String fieldName, Number value) throws Exception
+	{
+		QBCustomObjectUpdateBuilder builder = new QBCustomObjectUpdateBuilder();
+		builder.inc(fieldName, value);
+		
+		CustomObjectCB cb =new CustomObjectCB();
+		QBCustomObjects.updateObject(customObject,builder,cb);
 		if(cb.obj==null) return false;
 		cb.obj.copyFieldsTo(customObject);
 		return true;

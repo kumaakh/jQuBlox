@@ -121,6 +121,19 @@ public class QBTest {
 			assertThat(f.get("model").toString(),is(equalTo("Zen")));
 			assertThat(f.get("value").toString(),is(equalTo("781")));
 		}
+
+		//increment and decrement
+		{
+			QBCustomObject qb=new QBCustomObject(className,cusId);
+			assertThat(q.incrementFieldBy(qb,"value",3),is(true));
+			HashMap<String, Object> f = qb.getFields();
+			assertThat(f.get("value").toString(),is(equalTo("784")));
+			
+			assertThat(q.incrementFieldBy(qb,"value",-2),is(true));
+			f = qb.getFields();
+			assertThat(f.get("value").toString(),is(equalTo("782")));
+		}
+
 		//delete
 		{
 			QBCustomObject qb=new QBCustomObject(className,cusId);
@@ -131,6 +144,9 @@ public class QBTest {
 			QBCustomObject qb=new QBCustomObject(className,cusId);
 			assertThat(q.deleteObject(qb),is(false));
 		}
+		
+		// test inc update
+		
 		
 	}
 }
